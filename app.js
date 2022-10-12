@@ -10,18 +10,18 @@ var notes = [
   { quote: "Hi", author: "we" },
 ];
 
-// app.get("/", (req, res) => {
-//   res.send(
-//     notes
-//       .map(
-//         (product) =>
-//           `<h1>${product.quote}</h1><br>
-//         <h5>${product.author}</h5>
-//         `
-//       )
-//       .join("")
-//   );
-// });
+app.get("/", (req, res) => {
+  res.send(
+    notes
+      .map(
+        (product) =>
+          `<h1>${product.quote}</h1><br>
+        <h5>${product.author}</h5>
+        `
+      )
+      .join("")
+  );
+});
 
 // app.post("/post", (req, res) => {
 //   console.log(req.body);
@@ -63,10 +63,6 @@ var notes = [
 //   ];
 //   res.send();
 // });
-
-app.get("", (req, res) => {
-  res.send("me");
-});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
