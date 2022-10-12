@@ -23,46 +23,46 @@ app.get("/", (req, res) => {
   );
 });
 
-// app.post("/post", (req, res) => {
-//   console.log(req.body);
-//   var quote = String(req.body.quote);
-//   var author = String(req.body.author);
-//   if (author == undefined || author == "") {
-//     author = "Annoymous";
-//   }
+app.post("/post", (req, res) => {
+  console.log(req.body);
+  var quote = String(req.body.quote);
+  var author = String(req.body.author);
+  if (author == undefined || author == "") {
+    author = "Annoymous";
+  }
 
-//   if (quote == undefined || quote == "") {
-//     quote = "I cant remember what they said...";
-//   }
+  if (quote == undefined || quote == "") {
+    quote = "I cant remember what they said...";
+  }
 
-//   var obj = { quote: quote, author: author };
-//   notes.push(obj);
-//   res.send();
-// });
+  var obj = { quote: quote, author: author };
+  notes.push(obj);
+  res.send();
+});
 
-// app.put("/put", (req, res) => {
-//   console.log(req.body);
-//   var quote = String(req.body.quote);
-//   var author = String(req.body.author);
-//   if (author == undefined || author == "") {
-//     author = "Annoymous";
-//   }
+app.put("/put", (req, res) => {
+  console.log(req.body);
+  var quote = String(req.body.quote);
+  var author = String(req.body.author);
+  if (author == undefined || author == "") {
+    author = "Annoymous";
+  }
 
-//   if (quote == undefined || quote == "") {
-//     quote = "I cant remember what they said...";
-//   }
-//   var obj = { quote: quote, author: author };
-//   notes.push(obj);
-//   res.send();
-// });
+  if (quote == undefined || quote == "") {
+    quote = "I cant remember what they said...";
+  }
+  var obj = { quote: quote, author: author };
+  notes.push(obj);
+  res.send();
+});
 
-// app.delete("/delete", (req, res) => {
-//   notes = [
-//     { quote: "me", author: "wo" },
-//     { quote: "Hi", author: "we" },
-//   ];
-//   res.send();
-// });
+app.delete("/delete", (req, res) => {
+  notes = [
+    { quote: "me", author: "wo" },
+    { quote: "Hi", author: "we" },
+  ];
+  res.send();
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
