@@ -2,15 +2,21 @@
   "name": "otot-b1",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.mjs",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --require babel-register tests/*.mjs --exit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "body-parser": "^1.20.1",
-    "express": "^4.18.2"
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "express": "^4.18.2",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "12.11.1"
