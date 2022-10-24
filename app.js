@@ -1,6 +1,4 @@
-import QuoteController from "./controllers/QuoteController.mjs";
-
-import bodyParser from "body-parser";
+const QuoteController = require("./controllers/QuoteController.mjs");
 
 const express = require("express");
 const app = express();
