@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import app from "../server/app.mjs";
+import app from "../app.mjs";
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
