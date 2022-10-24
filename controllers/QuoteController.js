@@ -56,4 +56,4 @@ class QuoteController {
     res.sendStatus(204);
   }
 }
-export default QuoteController;
+module.exports = QuoteController;

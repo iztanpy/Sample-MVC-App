@@ -3,4 +3,4 @@ var quotes = [
   { quote: "Hi", author: "we" },
 ];
 
-export default quotes;
+module.exports = quotes;
