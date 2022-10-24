@@ -1,6 +1,6 @@
-import quotes from "../dummy/quotes.mjs";
-import express from "express";
-import bodyParser from "body-parser";
+const quotes = require("../dummy/quotes.js");
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 
