@@ -1,4 +1,4 @@
-var quotes = [
+const quotes = [
   { quote: "me", author: "wo" },
   { quote: "Hi", author: "we" },
 ];

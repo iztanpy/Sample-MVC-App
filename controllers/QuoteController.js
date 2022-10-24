@@ -1,12 +1,4 @@
 const quotes = require("../dummy/quotes.js");
-const express = require("express");
-const bodyParser = require("body-parser");
-
-const app = express();
-
-const port = process.env.PORT || 3000;
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 class QuoteController {
   // Get all students
@@ -26,13 +18,14 @@ class QuoteController {
   static addQuote(req, res) {
     var quote = String(req.body.quote);
     var author = String(req.body.author);
-    if (author == undefined || author == "") {
+    console.log(quote);
+    if (author == "") {
       return res.status(404).json({
         message: "No author",
       });
     }
 
-    if (quote == undefined || quote == "") {
+    if (quote == "") {
       return res.status(404).json({
         message: "No quote",
       });

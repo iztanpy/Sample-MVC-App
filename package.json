@@ -5,7 +5,7 @@
   "main": "app.mjs",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --require babel-register tests/*.mjs --exit"
+    "test": "mocha --require babel-register tests/*.js --exit"
   },
   "author": "",
   "license": "ISC",
