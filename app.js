@@ -1,8 +1,8 @@
 import QuoteController from "./controllers/QuoteController.mjs";
 
-import express from "express";
 import bodyParser from "body-parser";
 
+const express = require("express");
 const app = express();
 
 const port = process.env.PORT || 3000;
