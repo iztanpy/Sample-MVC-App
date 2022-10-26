@@ -13,7 +13,6 @@ describe("Students", () => {
         .get("/")
         .end((err, res) => {
           res.should.have.status(200);
-          res.body.should.be.a("object");
           done();
         });
     });
@@ -65,7 +64,7 @@ describe("Students", () => {
         .request(app)
         .put("/put")
         .set("content-type", "application/x-www-form-urlencoded")
-        .send({ author: "", quote: "hi" })
+        .send({ author: "", quote: "hi", id: "1" })
         .end((err, res) => {
           res.should.have.status(404);
           done();
@@ -77,19 +76,43 @@ describe("Students", () => {
         .request(app)
         .put("/put")
         .set("content-type", "application/x-www-form-urlencoded")
-        .send({ author: "me", quote: "" })
+        .send({ author: "me", quote: "", id: "1" })
         .end((err, res) => {
           res.should.have.status(404);
           done();
         });
     });
 
-    it("should add a new quote", (done) => {
+    it("empty id should return an error", (done) => {
+      chai
+        .request(app)
+        .put("/put")
+        .set("content-type", "application/x-www-form-urlencoded")
+        .send({ author: "me", quote: "1", id: "" })
+        .end((err, res) => {
+          res.should.have.status(404);
+          done();
+        });
+    });
+
+    it("invalid id should return an error", (done) => {
+      chai
+        .request(app)
+        .put("/put")
+        .set("content-type", "application/x-www-form-urlencoded")
+        .send({ author: "me", quote: "1", id: "100000" })
+        .end((err, res) => {
+          res.should.have.status(404);
+          done();
+        });
+    });
+
+    it("should edit a new quote", (done) => {
       chai
         .request(app)
         .post("/post")
         .set("content-type", "application/x-www-form-urlencoded")
-        .send({ author: "me", quote: "hi" })
+        .send({ author: "me", quote: "hi", id: "1" })
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a("object");
