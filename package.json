@@ -2,7 +2,7 @@
   "name": "otot-b1",
   "version": "1.0.0",
   "description": "",
-  "main": "app.mjs",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "mocha --require babel-register tests/*.js --exit"
