@@ -52,7 +52,7 @@ class QuoteController {
         message: "No id",
       });
     }
-    if (id > quotes.length) {
+    if (id > quotes.length || id <= 0) {
       return res.status(404).json({
         message: "Invalid id",
       });
